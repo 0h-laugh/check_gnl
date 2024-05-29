@@ -14,15 +14,17 @@ int main(void)
         return 1;
     }
 
-    while ((line = get_next_line(fd1)) != NULL)
+    while (1)
     {
+        line = get_next_line(fd1);
+        if (line == NULL || line[0] == '\0')
+            break;
         printf("File1: %s\n", line);
         free(line);
 
         line = get_next_line(fd2);
-        if (line == NULL)
+        if (line == NULL || line[0] == '\0')
             break;
-
         printf("File2: %s\n", line);
         free(line);
     }
