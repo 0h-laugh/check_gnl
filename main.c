@@ -1,7 +1,7 @@
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdio.h>
-
+//working best on example of buffer size 1 then it prints line by line not mixing words
 int main(void)
 {
     int fd1 = open("file1.txt", O_RDONLY);
