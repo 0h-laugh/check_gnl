@@ -11,26 +11,24 @@ int main(void)
     if (fd1 == -1 || fd2 == -1)
     {
         printf("Failed to open one or both files\n");
-        return 1;
+        return(1);
     }
 
     while (1)
     {
         line = get_next_line(fd1);
         if (line == NULL || line[0] == '\0')
-            break;
+            break ;
         printf("File1: %s\n", line);
         free(line);
 
         line = get_next_line(fd2);
         if (line == NULL || line[0] == '\0')
-            break;
+            break ;
         printf("File2: %s\n", line);
         free(line);
     }
-
     close(fd1);
     close(fd2);
-
-    return 0;
+    return(0);
 }
